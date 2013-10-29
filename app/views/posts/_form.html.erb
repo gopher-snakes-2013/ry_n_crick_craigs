@@ -1,0 +1,17 @@
+
+<%= form_for @post do |post_form| %>
+  <%= post_form.label :title %>
+  <%= post_form.text_field :title %>
+  <br />
+  <%= post_form.label :description %>
+  <br />
+  <%= post_form.text_area :description %>
+  <br />
+  <%= post_form.submit %>
+<% end %>
+
+<% if @post.errors.any? %>
+  <% @post.errors.each do |error|%>
+    <%= error.inspect %>
+  <% end %>
+<% end %>
